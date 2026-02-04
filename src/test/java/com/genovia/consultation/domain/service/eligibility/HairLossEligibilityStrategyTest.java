@@ -50,7 +50,7 @@ class HairLossEligibilityStrategyTest {
 
         List<Question> questions = List.of(
                 new Question("HL1", "Are you male and aged 18-65?", QuestionType.YES_NO, true, "NO", null),
-                new Question("HL2", "Do you have prostate issues?", QuestionType.YES_NO, true, "YES", null)
+                new Question("HL2", "Do you have heart conditions?", QuestionType.YES_NO, true, "YES", null)
         );
 
         List<Answer> answers = List.of(
@@ -108,7 +108,7 @@ class HairLossEligibilityStrategyTest {
     @Test
     void shouldBeCaseInsensitive_whenCheckingDisqualifyingAnswers() {
         List<Question> questions = List.of(
-                new Question("HL1", "Do you have prostate issues?", QuestionType.YES_NO, true, "YES", null)
+                new Question("HL1", "Do you have heart conditions?", QuestionType.YES_NO, true, "YES", null)
         );
 
         List<Answer> answers = List.of(
@@ -128,7 +128,7 @@ class HairLossEligibilityStrategyTest {
 
         List<Question> questions = List.of(
                 new Question("HL1", "Are you male and aged 18-65?", QuestionType.YES_NO, true, "NO", null),
-                new Question("HL2", "Do you have prostate issues?", QuestionType.YES_NO, true, "YES", null),
+                new Question("HL2", "Do you have heart conditions?", QuestionType.YES_NO, true, "YES", null),
                 new Question("HL3", "Are you taking blood thinners?", QuestionType.YES_NO, true, "YES", null)
         );
 
