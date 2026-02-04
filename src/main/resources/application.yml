@@ -1,0 +1,13 @@
+# Kafka Configuration (disabled by default)
+# To enable async doctor review workflow, set kafka.enabled=true
+# and configure bootstrap-servers
+kafka:
+  enabled: false
+
+# When kafka.enabled=true, configure:
+# spring:
+#   kafka:
+#     bootstrap-servers: localhost:9092
+#     producer:
+#       key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
