@@ -151,34 +151,8 @@ Tests across all layers:
 - Integration tests
 - Coverage reports: `./gradlew jacocoTestReport`
 
-## Production Considerations
+## Notes
 
-### Current Limitations & Enhancements
-
-**Synchronous Eligibility (Current)**
-- Returns immediate result based on automated rule checking
-- Suitable for simple cases with clear disqualifying factors
-
-**Async Doctor Review (Partial Implementation)**
-- User journey mentions doctor reviews "later that day" (Step 5)
-- Added: `ConsultationStatus` (PENDING_REVIEW, APPROVED, REJECTED)
-- Added: `DoctorReview` model for tracking doctor decisions
-- All consultations start with status=PENDING_REVIEW
-- Response includes current status and doctor review (if completed)
-- GET endpoint allows polling for status updates
-- Not yet implemented:
-  - Event publishing to message queue
-  - Separate doctor review service
-  - Automatic status updates
-  - WebSocket for real-time notifications
-- For now: Manual status updates via `withDoctorReview()` method
-
-**Database Persistence**
-- Current: In-memory with `ConcurrentHashMap`
-- Production: Swap with JPA repository adapter
-
-**Additional Production Needs:**
-1. Authentication/authorization
-2. Logging and monitoring
-3. Rate limiting
-4. API versioning
+- In-memory storage (ConcurrentHashMap) - would need database for production
+- Kafka integration added for async doctor review workflow (disabled by default)
+- Swagger UI available for easy API testing
